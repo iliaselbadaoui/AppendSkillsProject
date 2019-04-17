@@ -1,0 +1,4 @@
+#ce fichier à ne pas modifier ou supprimer
+RewriteEngine On
+Options -Indexes
+IndexOptions FancyIndexing

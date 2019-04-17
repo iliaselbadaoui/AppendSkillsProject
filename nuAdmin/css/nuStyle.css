@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+*{margin:0;padding: 0;}
+#app{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.renderer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90%;
+    width: auto;
+    margin: auto;
+}
+.renderer:first-child{
+    margin-left: 0;
+}
+#title{
+    font-family: 'Rubik',sans-serif;
+    color: #686de0;
+    padding: 16px;
+}
+#navigationDrawer{
+    width: 64px !important;
+    height: 100% !important;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 6px 1px rgba(0,0,0,.7);
+    transition-duration: 700ms;
+    display: flex;
+    flex-direction: column;
+}
+#fragment{
+    transition-duration: 700ms;
+    border: none;
+}
+#actionBar{
+    width: 100% !important;
+    height: 64px !important;
+    padding: 0 !important;
+    position: relative;
+    z-index: 9;
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    box-shadow: 0 0px 3px 1px rgba(0,0,0,.7);
+}
+#userMenu{
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 9;
+    display: none;
+    top: 0;
+    overflow: hidden;
+    transition-duration: 700ms;
+    right: 16px;
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,.4);
+}
+.ActiveUserMenu{
+    display: flex !important;
+    flex-direction: column !important;
+    top: 72px !important;
+    transition-duration: 700ms !important;
+}
+.homeLink{
+    width: auto;
+    height: fit-content;
+    padding: 16px;
+    display: inline-block;
+    margin: 0;
+    flex-grow: 14;
+}
+.homeLink img{
+    width: 128px;
+    height: 32px;
+    display: block;
+    margin: auto;
+}
+.col{
+    padding: 0 !important;
+}
+.float-right{
+    float: right;
+}
+.float-left{
+    float: left;
+}
+.item{
+    width:64px;
+    height: 64px;
+    color: #8c7ae6;
+    font-size: 18px;
+    text-align: center;
+    line-height: 64px;
+    display: inline-block;
+    transition-duration: 300ms;
+    flex-grow: 0;
+}
+.active_item{
+    width:64px;
+    height: 64px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 64px;
+    display: inline-block;
+    transition-duration: 300ms;
+    flex-grow: 0;
+    background-color: #7635ff;
+    color: #ffffff;
+    cursor: pointer;
+}
+.item:hover{
+    background-color: #8c7ae6;
+    color: #ffffff;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+.img-item{
+    width: 54px;
+    height: 54px;
+    padding: 5px;
+    display: inline-block;
+    flex-grow: 0;
+    cursor: pointer;
+}
+.img-item img{
+    width: 50px;
+    height: 50px;
+    border-radius: 48px;
+    border: 2px solid #8c7ae6;
+}
+.list-item{
+    color: #8c7ae6;
+    font-size: 18px;
+    font-family: 'Rubik',sans-serif;
+    padding: 4px;
+}
+.list-item i{
+    padding: 4px;
+}
+.list-item:hover{
+    color: #ffffff;
+    background-color: #8c7ae6;
+}
+
+.fa-card{
+    width: 200px;
+    height: 128px;
+    padding: 8px;
+    margin-left: 48px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,.4);
+    margin-bottom: 48px;
+    cursor: pointer;
+}
+.fa-card a{
+    color: #a29bfe;
+    width: auto;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+}
+.fa-card:hover{
+    background-color: #a29bfe;
+}
+.fa-card:hover a{
+    color: #FFFFFF;
+}
+.fa-card a span:first-child{
+    font-size: 78px !important;
+    display: block;
+    flex-grow: 2;
+}
+.fa-card a span{
+    font-size: 24px !important;
+    display: block;font-family: 'Rubik',sans-serif;
+}
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+td,th{padding: 6px !important;font-size: 16px !important;}
+thead tr:first-child{background-color: #686de0;font-family: 'Rubic', sans-serif;color: #FFFFFF;}
+tbody tr:nth-child(odd){background-color: #a29bfe;font-family: 'Rubic', sans-serif;color: #FFFFFF;}
+tbody tr:nth-child(even){background-color: #7635ff;font-family: 'Rubic', sans-serif;color: #FFFFFF;}
+.switch{
+    width: auto;
+    height: auto;
+    padding: 6px;
+    display: inline-block;
+    background-color: #a93641;
+    color: #eeeeee;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    border-radius: 24px;
+    position: relative;
+    cursor: pointer;
+}
+.switch-Activate{
+    width: auto;
+    height: auto;
+    padding: 6px;
+    display: inline-block;
+    background-color: #22104b;
+    color: #eeeeee;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    border-radius: 24px;
+    position: relative;
+    cursor: pointer;
+}
+.selection{
+    width: 300px;
+    height: 32px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    color: #eeeeee;
+    background-color: #a29bfe;
+}
+.selection option:hover{
+    background-color: #22104b;
+}
+.Positive_BTN{
+    width: auto;
+    height: auto;
+    max-width: 256px;
+    padding: 8px;
+    color: #eeeeee;
+    background-color: #22104b;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    margin: 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+}
+
+.Positive_BTN:active{
+    background-color: #2b1370;
+}
+.Negative_BTN{
+    width: auto;
+    height: auto;
+    max-width: 256px;
+    padding: 8px;
+    color: #22104b;
+    background-color: #eeeeee;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+}
+.Negative_BTN:active{
+    background-color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+}
+.Neutral_BTN{
+    width: auto;
+    height: auto;
+    max-width: 256px;
+    padding: 8px;
+    color: #22104b;
+    background-color: #cdcaf7;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+}
+.Neutral_BTN:active{
+    background-color: #c6bbfe;
+    font-family: 'Rubik', sans-serif;
+}
+.profil tr:nth-child(odd){
+    border-collapse: collapse;
+    background-color: white;
+    padding: 6px;
+    color: #22104b;
+}
+.profil tr:nth-child(even){
+    border-collapse: collapse;
+    background-color: white;
+    padding: 6px;
+    color: #22104b;
+}
+.loginContainer{
+    width: auto;
+    height: auto;
+    align-self: center;
+    padding: 16px;
+    background-color: #a29bfe;
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,.4);
+    border-radius: 6px;
+}
+.inputBlock{
+    margin: 8px;
+    width: 256px;
+    background-color: #FFFFFF !important;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    text-indent: 6px;
+    font-size: 14px;
+    color: #2b1370 !important;
+    display: block;
+}
+.inputBlock::placeholder{
+    color: #8c7ae6;
+}
+.input{
+    margin: 8px;
+    width: 256px;
+    background-color: #FFFFFF !important;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    text-indent: 6px;
+    font-size: 14px;
+    color: #2b1370 !important;
+}
+.input::placeholder{
+    color: #8c7ae6;
+}
+.hc-item{
+    display: block; !important;
+    margin: auto;
+}
+.err_msg{
+    font-family: 'Rubik', sans-serif;
+    color: #eb4d4b;
+    margin-top: 32px;
+    visibility: hidden;
+}
+.ModalContainer{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modal{
+    width: auto;
+    height: auto;
+    align-self: center;
+    padding: 16px;
+    background-color: #a29bfe;
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,.4);
+    border-radius: 6px;
+}
+.modalTitle{
+    color: #22104b;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    display: block;
+}

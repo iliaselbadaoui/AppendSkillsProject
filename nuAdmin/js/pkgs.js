@@ -1,0 +1,14 @@
+const micro = 'js/components/micro';
+const components = 'js/components';
+const modules = 'js/modules';
+const  activities = 'js/activities';
+const js = 'js';
+include`${micro}/fa-item.js ${'default'}`;
+include`${micro}/list-item.js ${'default'}`;
+include`${micro}/list.js ${'default'}`;
+include `${components}/navigationDrawer.js ${'default'}`;
+include `${components}/actionBar.js ${'default'}`;
+include `${components}/fragment.js ${'default'}`;
+include `${modules}/builder.js ${'default'}`;
+include `${js}/app.config.js ${document.getElementById('endRef')}`;
+include `${activities}/Main.js ${document.getElementById('endRef')}`;
