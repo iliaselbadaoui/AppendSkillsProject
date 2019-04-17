@@ -31,8 +31,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             echo "0";
         }
     }else if($op=='logout'){
-        $usr = $_SESSION["user"];
-        $SS->End($usr->id);
+        $SS->End($_SESSION["user"]->id);
         session_destroy();
         session_abort();
     }else if($op=="updatePasse"){

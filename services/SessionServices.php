@@ -25,7 +25,7 @@ class SessionServices
 
     function End($id)
     {
-        $query = "Update session set sortie=NOW() where id=? and sortie is NULL";
+        $query = "Update session set sortie=NOW() where user=? and sortie is NULL";
         $req = $this->connection->prepare($query);
         $req->execute(array($id)) or die("Error");
     }
