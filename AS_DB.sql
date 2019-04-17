@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  sam. 13 avr. 2019 à 14:37
+-- Généré le :  mer. 17 avr. 2019 à 20:42
 -- Version du serveur :  10.1.37-MariaDB
 -- Version de PHP :  7.3.1
 
@@ -81,6 +81,8 @@ CREATE TABLE `formation` (
   `etat` tinyint(1) NOT NULL,
   `prix` double NOT NULL,
   `description` text NOT NULL,
+  `photo` text NOT NULL,
+  `user` int(11) NOT NULL,
   `domaine` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -151,11 +153,19 @@ CREATE TABLE `section` (
 CREATE TABLE `session` (
   `id` int(11) NOT NULL,
   `entree` datetime NOT NULL,
-  `sortie` datetime NOT NULL,
+  `sortie` datetime DEFAULT NULL,
   `navigateur` varchar(50) NOT NULL,
   `sys_exp` varchar(50) NOT NULL,
   `user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `session`
+--
+
+INSERT INTO `session` (`id`, `entree`, `sortie`, `navigateur`, `sys_exp`, `user`) VALUES
+(1, '2019-04-17 13:42:39', '2019-04-17 14:59:19', 'chrome', 'elementary', 1),
+(2, '2019-04-17 19:40:49', NULL, 'Chrome', 'Linux x86_64', 1);
 
 -- --------------------------------------------------------
 
@@ -187,15 +197,17 @@ CREATE TABLE `user` (
   `tel` varchar(50) NOT NULL,
   `role` int(11) NOT NULL,
   `naissance` date NOT NULL,
-  `about` text NOT NULL
+  `about` text NOT NULL,
+  `etat` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `nom`, `prenom`, `email`, `motpasse`, `pays`, `ville`, `adresse`, `photo`, `tel`, `role`, `naissance`, `about`) VALUES
-(1, 'Elbadaoui', 'Ilias', 'iliaselbadaoui98@gmail.com', '@itf@sk@#98', 'Maroc', 'Marrakech', 'Ait mansour', '', '0628022976', 9, '1998-06-04', 'Je suis le co-fondateur de appendSkills');
+INSERT INTO `user` (`id`, `nom`, `prenom`, `email`, `motpasse`, `pays`, `ville`, `adresse`, `photo`, `tel`, `role`, `naissance`, `about`, `etat`) VALUES
+(1, 'Elbadaoui', 'Ilias', 'iliaselbadaoui98@gmail.com', '@itF@sk@#98', 'Maroc', 'Marrakech', 'Ait mansour', '', '0628022976', 9, '1998-06-04', 'Je suis le co-fondateur de appendSkills', b'1'),
+(3, 'Simple', 'User', 'simpleuser1@gmail.com', 'azerty1234', 'Maroc', 'Marrakech', 'Ait mansour', '', '0628022976', 11, '1997-02-26', '', b'1');
 
 -- --------------------------------------------------------
 
@@ -247,7 +259,8 @@ ALTER TABLE `domaine`
 --
 ALTER TABLE `formation`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `formation_domaine` (`domaine`);
+  ADD KEY `formation_domaine` (`domaine`),
+  ADD KEY `formatio_user` (`user`);
 
 --
 -- Index pour la table `Interesser`
@@ -336,13 +349,13 @@ ALTER TABLE `section`
 -- AUTO_INCREMENT pour la table `session`
 --
 ALTER TABLE `session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `video`
@@ -379,6 +392,7 @@ ALTER TABLE `Contacter`
 -- Contraintes pour la table `formation`
 --
 ALTER TABLE `formation`
+  ADD CONSTRAINT `formatio_user` FOREIGN KEY (`user`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `formation_domaine` FOREIGN KEY (`domaine`) REFERENCES `domaine` (`id`);
 
 --
