@@ -89,6 +89,12 @@ modifyProfil.addEventListener("click",function () {
     modal.appendChild(Ntel);
     modal.appendChild(valider);
     document.body.appendChild(container);
+    modal.onclick = function(e){
+        e.stopPropagation();
+    };
+    container.onclick=function () {
+        container.parentNode.removeChild(container);
+    }
 });
 function valider(int) {
 
@@ -131,16 +137,18 @@ changePasse.addEventListener("click",function () {
                     xhr.send(formData);
                     if(xhr.status==200){
                         let res = xhr.response;
-                        console.log(res)
+                        console.log(res);
+                        container.parentNode.removeChild(container);
+                        builder.Toast("Votre mot de passe est changé avec succés",3000);
                     }
                 }else {
-                    alert("Les deux champs ne contient pas le même mot de passe");
+                    builder.Toast("Les deux champs ne contient pas le même mot de passe",3000);
                 }
             }else {
-                alert("Le mot de passe doit avoir une lettre majiscule au moin et un symbole.")
+                builder.Toast("Le mot de passe doit avoir une lettre majiscule au moin et un symbole.",3000);
             }
         }else {
-            alert("Le mot de passe doit doit contenir au moin 8 caractère");
+            builder.Toast("Le mot de passe doit doit contenir au moin 8 caractère",3000);
         }
     };
     container.appendChild(modal);
@@ -149,4 +157,10 @@ changePasse.addEventListener("click",function () {
     modal.appendChild(confirmPass);
     modal.appendChild(valider);
     document.body.appendChild(container);
+    modal.onclick = function(e){
+        e.stopPropagation();
+    };
+    container.onclick=function () {
+        container.parentNode.removeChild(container);
+    }
 });

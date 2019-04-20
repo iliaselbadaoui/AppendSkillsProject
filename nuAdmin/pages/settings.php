@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/nuStyle.css">
+    <script src="../js/modules/builder.js"></script>
 </head>
 <style type="text/css">
     body{

@@ -48,5 +48,14 @@ const builder = ({
         }
         //Affect the width to the node
         Node.style.height=nodeHeight+"%";
+    },
+    Toast(message,timeout){
+        let toast = document.createElement("div");
+        toast.className="Toast";
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(function () {
+            document.body.removeChild(toast);
+        },timeout);
     }
 });

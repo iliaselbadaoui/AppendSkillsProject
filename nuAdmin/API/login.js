@@ -5,7 +5,7 @@ $(document).ready(function () {
             formData = new FormData(),
             xhr;
         formData.append("os",navigator.platform);
-        formData.append("nav",navigator.appVersion);
+        formData.append("nav",getNavigateur());
         formData.append("type","admin");
         formData.append("email",email);
         formData.append("passe",passe);
@@ -31,3 +31,29 @@ $(document).ready(function () {
         }
     });
 });
+function getNavigateur() {
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 )
+    {
+        return 'Opera';
+    }
+    else if(navigator.userAgent.indexOf("Chrome") != -1 )
+    {
+        return 'Chrome';
+    }
+    else if(navigator.userAgent.indexOf("Safari") != -1)
+    {
+        return 'Safari';
+    }
+    else if(navigator.userAgent.indexOf("Firefox") != -1 )
+    {
+        return 'Firefox';
+    }
+    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+        return  'IE';
+    }
+    else
+    {
+        return  'unknown';
+    }
+}

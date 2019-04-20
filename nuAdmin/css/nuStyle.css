@@ -383,3 +383,19 @@ tbody tr:nth-child(even){background-color: #7635ff;font-family: 'Rubic', sans-se
     text-align: center;
     display: block;
 }
+.Toast{
+    width: auto;
+    height: auto;
+    padding: 6px;
+    min-width: 32px;
+    max-width: 900px;
+    background-color: #b3aac1;
+    color: #2b1370;
+    text-align: center;
+    position: absolute;
+    bottom: 32px;
+    border-radius: 8px;
+    align-self: center;
+    z-index: 1000;
+    font-family: 'Rubik', sans-serif;
+}
