@@ -314,6 +314,9 @@ tbody tr:nth-child(even){background-color: #7635ff;font-family: 'Rubic', sans-se
     box-shadow: 1px 2px 4px 1px rgba(0,0,0,.4);
     border-radius: 6px;
 }
+.inputBlock:double-button{
+    display: none;
+}
 .inputBlock{
     margin: 8px;
     width: 256px;
@@ -398,4 +401,37 @@ tbody tr:nth-child(even){background-color: #7635ff;font-family: 'Rubic', sans-se
     align-self: center;
     z-index: 1000;
     font-family: 'Rubik', sans-serif;
+}
+div.datedropper{
+    --dd-color1: #2b1370 !important;
+    --dd-color2: white !important;
+    --dd-color3: #2c3e50 !important;
+    --dd-color4: white !important;
+    --dd-radius: 6px !important;
+    --dd-width: 180px !important;
+    --dd-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.1) !important;
+    -ms-touch-action: none;
+    touch-action: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2147483638;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    line-height: 1;
+    font-family: sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -8px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 6px!important;
+    border-radius: var(--dd-radius)!important;
 }

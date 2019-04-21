@@ -38,6 +38,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $user = $_SESSION["user"];
         $US->UpdatePasse($user->id,$passe);
         echo "Mot de passe changer avec succés";
+    }else if($op=="updateUser"){
+        $u = $_SESSION["user"];
+        $user = new User($u->id,$nom,$prenom,"","",$adress,$ville,$pays,$tel,"","","",$naissance);
+        $US->ShortUpdate($user);
     }
 
 }

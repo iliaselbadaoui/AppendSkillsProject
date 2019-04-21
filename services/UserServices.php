@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(2);
 include_once "../root.php";
 include_once root."/interfaces/CRUD.php";
 include_once root."/classes/Connection.php";
@@ -39,9 +39,16 @@ class UserServices implements CRUD
 
     function Update($O)
     {
-        $query = "Update user set nom=?,prenom=?,email=?,motpass=?,pays=?,ville=?,adress=?,photo=?,tel=?,role=?,naissance=?,about=? where id=?";
+        $query = "Update user set nom=?,prenom=?,email=?,motpasse=?,pays=?,ville=?,adress=?,photo=?,tel=?,role=?,naissance=?,about=? where id=?";
         $req = $this->connection->prepare($query);
-        $req->execute(array($O->getNom(),$O->getPrenom(),$O->getEmail(),$O->getPass(),$O->getPays(),$O->getVille(),$O->getAdress(),$O->getPhoto(),$O->getTel(),$O->getRole(),$O->getNaissance(),$O->getAbout(),$O->getId())) or die("Erreur");
+        $req->execute(array($O->getNom(),$O->getPrenom(),$O->getEmail(),$O->getPass(),$O->getPays(),$O->getVille(),$O->getAdress(),$O->getPhoto(),$O->getTel(),$O->getRole(),$O->getNaissance(),$O->getAbout(),$O->getId())) or die("Error");
+    }
+
+    function ShortUpdate($O)
+    {
+        $query = "Update user set nom=?,prenom=?,pays=?,ville=?,adress=?,tel=?,naissance=? where id=?";
+        $req = $this->connection->prepare($query);
+        $req->execute(array($O->getNom(),$O->getPrenom(),$O->getPays(),$O->getVille(),$O->getAdress(),$O->getTel(),$O->getNaissance(),$O->getId())) or die("Error");
     }
 
     function Delete($O)

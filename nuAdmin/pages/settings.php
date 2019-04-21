@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/nuStyle.css">
+    <link rel="stylesheet" href="../css/nuDatePicker.css"/>
+    <link rel="stylesheet" href="../css/nuStyle.css"/>
     <script src="../js/modules/builder.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.datedropper.com/get/w0hno7rnpf1lf33wusb8kq5in3tv4y5u"></script>
 </head>
 <style type="text/css">
     body{
@@ -51,6 +54,7 @@
             </tr>
         </table>
     </div>
+
     <script src="../js/activities/settings.js" type="text/javascript"></script>
 </body>
 </html>

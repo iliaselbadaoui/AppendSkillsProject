@@ -37,6 +37,7 @@ modifyProfil.addEventListener("click",function () {
         Nville = document.createElement("input"),
         Nadress = document.createElement("input"),
         Ntel = document.createElement("input"),
+        Nnaissance = document.createElement("input"),
         valider = document.createElement("button");
     container.className="ModalContainer";
     container.id="container";
@@ -53,7 +54,7 @@ modifyProfil.addEventListener("click",function () {
     Nprenom.placeholder="Prénom";
     Nprenom.type="text";
     Npays.className="inputBlock";
-    Npays.id="noù";
+    Npays.id="pays";
     Npays.placeholder="Pays";
     Npays.type="text";
     Nville.className="inputBlock";
@@ -68,10 +69,49 @@ modifyProfil.addEventListener("click",function () {
     Ntel.id="tel";
     Ntel.placeholder="Téléphone";
     Ntel.type="text";
+    Nnaissance.className="inputBlock";
+    Nnaissance.id="naissance";
+    Nnaissance.type="text";
     valider.textContent="Valider";
     valider.className="Positive_BTN hc-item";
     valider.id="valider";
-    valider.onclick=function(){/*Hna validation*/};
+    valider.onclick=function(){
+        let xhr = new XMLHttpRequest(),
+            formData = new FormData();
+        if(Nnom.value!=""||Nprenom.value!=""||Npays.value!=""||Nville.value!=""||Nadress.value!=""||Ntel.value!=""||Nnaissance.value!=""){
+            formData.append("nom",Nnom.value);
+            formData.append("prenom",Nprenom.value);
+            formData.append("pays",Npays.value);
+            formData.append("ville",Nville.value);
+            formData.append("adress",Nadress.value);
+            formData.append("tel",Ntel.value);
+            var dateArr, newNaissance;
+            if(Nnaissance.value.toString().includes("/")){
+                dateArr = Nnaissance.value.toString().split("/");
+                newNaissance = dateArr[2]+"-"+dateArr[1]+"-"+dateArr[0];
+            }
+            formData.append("naissance",newNaissance);
+            formData.append("op","updateUser");
+            xhr.open("POST","../../controllers/UserController.php",false);
+            xhr.send(formData);
+            if(xhr.status==200){
+                let res = xhr.response;
+                console.log(newNaissance);
+                if(res==="Error"){
+                    builder.Toast("Une erreur est survenue.",3000);
+                }else {
+                    builder.Toast("Votre profil est à jour.",3000);
+                    container.parentNode.removeChild(container);
+                }
+
+            }else {
+                builder.Toast("Une erreur est survenue. Réessayer ultérieurement.",3000);
+            }
+        }else{
+            builder.Toast("Il faut remplir tout les champs.",3000);
+        }
+
+    };
     let res = JSON.parse(response);
     Nnom.value = res.nom;
     Nprenom.value = res.prenom;
@@ -79,6 +119,7 @@ modifyProfil.addEventListener("click",function () {
     Nville.value = res.ville;
     Nadress.value = res.adresse;
     Ntel.value = res.tel;
+    Nnaissance.value = res.naissance;
     container.appendChild(modal);
     modal.appendChild(title);
     modal.appendChild(Nnom);
@@ -87,6 +128,7 @@ modifyProfil.addEventListener("click",function () {
     modal.appendChild(Nville);
     modal.appendChild(Nadress);
     modal.appendChild(Ntel);
+    modal.appendChild(Nnaissance);
     modal.appendChild(valider);
     document.body.appendChild(container);
     modal.onclick = function(e){
@@ -94,7 +136,8 @@ modifyProfil.addEventListener("click",function () {
     };
     container.onclick=function () {
         container.parentNode.removeChild(container);
-    }
+    };
+    $('#naissance').dateDropper();
 });
 function valider(int) {
 
@@ -148,7 +191,7 @@ changePasse.addEventListener("click",function () {
                 builder.Toast("Le mot de passe doit avoir une lettre majiscule au moin et un symbole.",3000);
             }
         }else {
-            builder.Toast("Le mot de passe doit doit contenir au moin 8 caractère",3000);
+            builder.Toast("Le mot de passe doit contenir au moin 8 caractère",3000);
         }
     };
     container.appendChild(modal);
