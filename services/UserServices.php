@@ -28,7 +28,10 @@ class UserServices implements CRUD
 
     function Read()
     {
-        // TODO: Implement Read() method.
+        $query = "Select * from user";
+        $req = $this->connection->query($query);
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
+        return json_encode($res);
     }
 
     function UpdatePasse($id,$passe){

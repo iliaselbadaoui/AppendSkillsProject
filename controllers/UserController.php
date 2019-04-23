@@ -42,6 +42,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $u = $_SESSION["user"];
         $user = new User($u->id,$nom,$prenom,"","",$adress,$ville,$pays,$tel,"","","",$naissance);
         $US->ShortUpdate($user);
+    }elseif ($op="simpleuserlogin"){
+        $user = $US->FindByEmail($email);
+        if ($user!=null){
+            if(md5($user->motpasse)==md5($passe)){
+                session_start();
+                $_SESSION["user"]=$user;
+                setcookie("username",md5($email),time()+(86400*365),"/");
+                setcookie("userpass",md5($passe),time()+(86400*365),"/");
+                header('Content-type: application/json');
+                header("location:../appendSkills/intro.php");
+            }else{
+                header("location:../appendSkills/login.php?e=mdp");
+            }
+        }else{
+            header("location:../appendSkills/login.php?e=email");
+        }
+    }elseif ($op=='addSimpleUser'){
+        //$US->Create(new User(0,null,null,$email,$passe,,null,null,null,11,'no-photo.png',null,null));
     }
 
 }

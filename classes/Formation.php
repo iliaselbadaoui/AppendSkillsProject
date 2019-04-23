@@ -9,6 +9,8 @@ class Formation
     private $etat;
     private $prix;
     private $description;
+    private $photo;
+    private $user;
 
     /**
      * Formation constructor.
@@ -18,8 +20,10 @@ class Formation
      * @param $etat
      * @param $prix
      * @param $description
+     * @param $photo
+     * @param $user
      */
-    public function __construct($id, $nom, $duree, $etat, $prix, $description)
+    public function __construct($id, $nom, $duree, $etat, $prix, $description, $photo, $user)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -27,6 +31,8 @@ class Formation
         $this->etat = $etat;
         $this->prix = $prix;
         $this->description = $description;
+        $this->photo = $photo;
+        $this->user = $user;
     }
 
     /**
@@ -124,6 +130,40 @@ class Formation
     {
         $this->description = $description;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+
 
 
 }

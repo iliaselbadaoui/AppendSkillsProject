@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e41c93-ff47-427c-8629-5a3da7197c00" name="Default Changelist" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/appendSkills/inc/domaines.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appendSkills/inc/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appendSkills/inc/nav.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appendSkills/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appendSkills/singin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/UserServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/UserServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/course-content.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/course-content.html" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/course-content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/course.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/html_intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appendSkills/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/appendSkills/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/services/UserServices.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="665">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -35,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nuAdmin/pages/settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
+            <state relative-caret-position="825">
               <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
             </state>
           </provider>
@@ -44,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nuAdmin/js/activities/settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="1350">
               <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
             </state>
           </provider>
@@ -62,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nuAdmin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="668">
+            <state relative-caret-position="675">
               <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="43" />
             </state>
           </provider>
@@ -127,11 +143,11 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="800" />
-    <option name="y" value="30" />
-    <option name="width" value="800" />
-    <option name="height" value="870" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="803" />
+    <option name="y" value="24" />
+    <option name="width" value="797" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -139,51 +155,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-              <item name="nuAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-              <item name="nuAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-              <item name="nuAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-              <item name="nuAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppendSkillsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppendSkillsProject" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="AppendSkills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppendSkills" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,6 +234,8 @@
       <workItem from="1555837512722" duration="1315000" />
       <workItem from="1555844994329" duration="6008000" />
       <workItem from="1555863874297" duration="10876000" />
+      <workItem from="1556045632838" duration="37000" />
+      <workItem from="1556045709199" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1555158278227</created>
@@ -312,7 +297,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123855000" />
+    <option name="totallyTimeSpent" value="123953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -324,10 +309,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="800" y="30" width="800" height="870" extended-state="4" />
-    <editor active="true" />
+    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.54376656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.5501601" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -556,24 +540,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nuAdmin/pages/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nuAdmin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nuAdmin/css/nuStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
           <caret line="390" column="17" lean-forward="true" selection-start-line="390" selection-start-column="17" selection-end-line="390" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/UserServices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -584,6 +561,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nuAdmin/pages/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuAdmin/js/activities/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -591,17 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nuAdmin/js/activities/settings.js">
+    <entry file="file://$PROJECT_DIR$/nuAdmin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/UserServices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="675">
+          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="43" />
         </state>
       </provider>
     </entry>

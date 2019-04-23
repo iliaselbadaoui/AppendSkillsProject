@@ -6,21 +6,27 @@ class Video
     private $id;
     private $titre;
     private $chemin;
+    PRIVATE $section;
     private $description;
+    private $gratuit;
 
     /**
      * Video constructor.
      * @param $id
      * @param $titre
      * @param $chemin
+     * @param $section
      * @param $description
+     * @param $gratuit
      */
-    public function __construct($id, $titre, $chemin, $description)
+    public function __construct($id, $titre, $chemin, $section, $description, $gratuit)
     {
         $this->id = $id;
         $this->titre = $titre;
         $this->chemin = $chemin;
+        $this->section = $section;
         $this->description = $description;
+        $this->gratuit = $gratuit;
     }
 
     /**
@@ -74,6 +80,22 @@ class Video
     /**
      * @return mixed
      */
+    public function getSection()
+    {
+        return $this->section;
+    }
+
+    /**
+     * @param mixed $section
+     */
+    public function setSection($section)
+    {
+        $this->section = $section;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getDescription()
     {
         return $this->description;
@@ -86,6 +108,23 @@ class Video
     {
         $this->description = $description;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getGratuit()
+    {
+        return $this->gratuit;
+    }
+
+    /**
+     * @param mixed $gratuit
+     */
+    public function setGratuit($gratuit)
+    {
+        $this->gratuit = $gratuit;
+    }
+
 
 
 }
